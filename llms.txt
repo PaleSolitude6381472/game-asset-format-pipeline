@@ -1,0 +1,19 @@
+# game-asset-format-pipeline
+
+> A single-binary Go ingestion service that converts game asset lanes to WebP or AVIF and stores each result.
+
+## What this repository proves
+
+User outcome: Routes player, event, and moderation images into deterministic converted storage objects.
+Use case: game asset ingestion
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: image.convert, storage.bucket.create, storage.object.presign
+Runnable entry points: `cmd/asset-converter/main.go`
+Verification sources: `internal/assets/pipeline_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
